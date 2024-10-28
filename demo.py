@@ -8,13 +8,20 @@ import numpy as np
 import matplotlib.pyplot as plt
 import pyhh
 
+V_r = 70
+
 if __name__ == "__main__":
 
     # customize a neuron model if desired
     model = pyhh.HHModel()
     model.gNa = 120  # typically 120
     model.gK = 36  # typically 36
+    model.gKleak = 0.3  # typically 0.3
+
     model.EK = -12  # typically -12
+    model.ENa = 115 # typically 115
+    model.EKleak = 10.6  # typically 10.6
+    
 
     # customize a stimulus waveform
     stim = np.zeros(3000)
