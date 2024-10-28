@@ -14,18 +14,18 @@ if __name__ == "__main__":
 
     # customize a neuron model if desired
     model = pyhh.HHModel()
-    model.gNa = 120  # typically 120
-    model.gK = 36  # typically 36
+    model.gNa = 100  # typically 120
+    model.gK = 5  # typically 36
     model.gKleak = 0.3  # typically 0.3
 
-    model.EK = -12  # typically -12
+    model.EK = -35  # typically -12
     model.ENa = 115 # typically 115
     model.EKleak = 10.6  # typically 10.6
     
 
     # customize a stimulus waveform
-    stim = np.zeros(3000)
-    stim[7:13000] = 50  # add a square pulse
+    stim = np.zeros(100)
+    stim[7:13000] = 70  # add a square pulse
 
     # simulate the model cell using the custom waveform
     sim = pyhh.Simulation(model)
@@ -35,7 +35,7 @@ if __name__ == "__main__":
     plt.figure(figsize=(10, 8))
 
     ax1 = plt.subplot(411)
-    ax1.plot(sim.times, sim.Vm - 70, color='b')
+    ax1.plot(sim.times, sim.Vm, color='b')
     ax1.set_ylabel("Potential (mV)")
     ax1.set_title("Hodgkin-Huxley Spiking Neuron Model" )
 
