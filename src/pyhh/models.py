@@ -19,7 +19,7 @@ class HHModel:
     ENa, EK, EKleak = 115, -12, 10.6
     gNa, gK, gKleak = 120, 36, 0.3
     m, n, h = Gate(), Gate(), Gate()
-    Cm = 0.1
+    Cm = 1
 
     def __init__(self, startingVoltage=0):
         self.Vm = startingVoltage
