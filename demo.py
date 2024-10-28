@@ -17,7 +17,7 @@ if __name__ == "__main__":
     model.EK = -12  # typically -12
 
     # customize a stimulus waveform
-    stim = np.zeros(10000)
+    stim = np.zeros(3000)
     stim[7:13000] = 50  # add a square pulse
 
     # simulate the model cell using the custom waveform
