@@ -30,7 +30,7 @@ if __name__ == "__main__":
     ax1 = plt.subplot(411)
     ax1.plot(sim.times, sim.Vm - 70, color='b')
     ax1.set_ylabel("Potential (mV)")
-    ax1.set_title("Hodgkin-Huxley Spiking Neuron Model", fontSize=16)
+    ax1.set_title("Hodgkin-Huxley Spiking Neuron Model" )
 
     ax2 = plt.subplot(412)
     ax2.plot(sim.times, stim, color='r')
