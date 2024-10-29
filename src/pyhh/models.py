@@ -28,6 +28,8 @@ class HHModel:
         self.n.setInfiniteState()
         self.n.setInfiniteState()
 
+        print("n, m, h : ",self.n.state, self.m.state,self.h.state)
+
     def _UpdateGateTimeConstants(self, Vm):
         """Update time constants of all gates based on the given Vm"""
         self.n.alpha = .01 * ((10-Vm) / (np.exp((10-Vm)/10)-1))
