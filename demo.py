@@ -22,14 +22,15 @@ if __name__ == "__main__":
     model.ENa = 115 # typically 115
     model.EKleak = 10.6  # typically 10.6
     
+    model.Cm = 1  # typically 0.1
 
     # customize a stimulus waveform
-    stim = np.zeros(2000)
-    stim[0:43000] = 50  # add a square pulse
+    stim = np.zeros(100)
+    stim[0:43000] = 45  # add a square pulse
 
     # simulate the model cell using the custom waveform
     sim = pyhh.Simulation(model)
-    sim.Run(stimulusWaveform=stim, stepSizeMs=0.001)
+    sim.Run(stimulusWaveform=stim, stepSizeMs=0.01)
 
     # plot the results with MatPlotLib
     plt.figure(figsize=(10, 8))

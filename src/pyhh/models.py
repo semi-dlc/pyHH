@@ -3,15 +3,19 @@ import numpy as np
 
 class HHModel:
     """The HHModel tracks conductances of 3 channels to calculate Vm"""
-
+    
     class Gate:
         """The Gate object manages a channel's kinetics and open state"""
         alpha, beta, state = 0, 0, 0
+        
+        def temperatureFactor(T): # Celsius
+            return np.float_power(3,0.1 * (T - 6.3))
+        PHI_T = temperatureFactor(29)
 
         def update(self, deltaTms):
             alphaState = self.alpha * (1-self.state)
             betaState = self.beta * self.state
-            self.state += deltaTms * (alphaState - betaState)
+            self.state += self.PHI_T * deltaTms * (alphaState - betaState)
 
         def setInfiniteState(self):
             self.state = self.alpha / (self.alpha + self.beta)
