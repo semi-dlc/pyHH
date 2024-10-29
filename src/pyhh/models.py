@@ -26,7 +26,7 @@ class HHModel:
         self._UpdateGateTimeConstants(startingVoltage)
         self.m.setInfiniteState()
         self.n.setInfiniteState()
-        self.n.setInfiniteState()
+        self.h.setInfiniteState()
 
         print("n, m, h : ",self.n.state, self.m.state,self.h.state)
 

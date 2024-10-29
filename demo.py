@@ -15,7 +15,7 @@ if __name__ == "__main__":
     # customize a neuron model if desired
     model = pyhh.HHModel()
     model.gNa = 120  # typically 120
-    model.gK = 5  # typically 36
+    model.gK = 36  # typically 36
     model.gKleak = 0.3  # typically 0.3
 
     model.EK = -35  # typically -12
@@ -24,8 +24,8 @@ if __name__ == "__main__":
     
 
     # customize a stimulus waveform
-    stim = np.zeros(100)
-    stim[0:13000] = 40  # add a square pulse
+    stim = np.zeros(10000)
+    stim[0:13000] = 0  # add a square pulse
 
     # simulate the model cell using the custom waveform
     sim = pyhh.Simulation(model)
