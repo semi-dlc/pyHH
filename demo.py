@@ -18,13 +18,13 @@ if __name__ == "__main__":
     model.gK = 36  # typically 36
     model.gKleak = 0.3  # typically 0.3
 
-    model.EK = -35  # typically -12
+    model.EK = -12  # typically -12
     model.ENa = 115 # typically 115
     model.EKleak = 10.6  # typically 10.6
     
 
     # customize a stimulus waveform
-    stim = np.zeros(100000)
+    stim = np.zeros(2000)
     stim[0:43000] = 50  # add a square pulse
 
     # simulate the model cell using the custom waveform
