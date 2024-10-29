@@ -21,7 +21,7 @@ class HHModel:
     m, n, h = Gate(), Gate(), Gate()
     Cm = 0.1
 
-    def __init__(self, startingVoltage=0):
+    def __init__(self, startingVoltage=-0):
         self.Vm = startingVoltage
         self._UpdateGateTimeConstants(startingVoltage)
         self.m.setInfiniteState()

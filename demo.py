@@ -24,12 +24,12 @@ if __name__ == "__main__":
     
 
     # customize a stimulus waveform
-    stim = np.zeros(10000)
-    stim[0:13000] = 0  # add a square pulse
+    stim = np.zeros(100000)
+    stim[0:43000] = 50  # add a square pulse
 
     # simulate the model cell using the custom waveform
     sim = pyhh.Simulation(model)
-    sim.Run(stimulusWaveform=stim, stepSizeMs=0.01)
+    sim.Run(stimulusWaveform=stim, stepSizeMs=0.001)
 
     # plot the results with MatPlotLib
     plt.figure(figsize=(10, 8))
