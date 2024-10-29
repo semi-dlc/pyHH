@@ -25,8 +25,8 @@ if __name__ == "__main__":
     model.Cm = 1  # typically 0.1
 
     # customize a stimulus waveform
-    stim = np.zeros(100)
-    stim[0:43000] = 70 # add a square pulse
+    stim = np.zeros(10)
+    stim[0:43000] = 40 # add a square pulse
 
     # simulate the model cell using the custom waveform
     sim = pyhh.Simulation(model)
@@ -38,7 +38,7 @@ if __name__ == "__main__":
     ax1 = plt.subplot(411)
     ax1.plot(sim.times, sim.Vm, color='b')
     ax1.set_ylabel("Potential (mV)")
-    ax1.set_title("Hodgkin-Huxley Spiking Neuron Model" )
+    ax1.set_title("Hodgkin-Huxley Neuron Model" )
 
     ax2 = plt.subplot(412)
     ax2.plot(sim.times, stim, color='r')
