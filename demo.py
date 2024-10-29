@@ -26,11 +26,11 @@ if __name__ == "__main__":
 
     # customize a stimulus waveform
     stim = np.zeros(100)
-    stim[0:43000] = 45  # add a square pulse
+    stim[0:43000] = 70 # add a square pulse
 
     # simulate the model cell using the custom waveform
     sim = pyhh.Simulation(model)
-    sim.Run(stimulusWaveform=stim, stepSizeMs=0.01)
+    sim.Run(stimulusWaveform=stim, stepSizeMs=0.1)
 
     # plot the results with MatPlotLib
     plt.figure(figsize=(10, 8))
@@ -55,6 +55,7 @@ if __name__ == "__main__":
     ax4.plot(sim.times, sim.INa, label='VGSC')
     ax4.plot(sim.times, sim.IK, label='VGKC')
     ax4.plot(sim.times, sim.IKleak, label='KLeak')
+    ax4.plot(sim.times, sim.INa + sim.IK + sim.IKleak, label='Isum')
     ax4.set_ylabel("Current (µA/cm²)")
     ax4.set_xlabel("Simulation Time (milliseconds)")
     ax4.legend()
