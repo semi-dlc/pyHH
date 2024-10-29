@@ -1,3 +1,5 @@
+Addendum as per 29th October 2024: This fork was introduced to apply the Hodgkin Huxley Model to shorter timespans with different conditions, aiming to replicate the simulations carried out by Frank Rattay [Analysis of Models for Extracellular Fiber Stimulation](https://ieeexplore.ieee.org/document/32099).
+
 # pyHH
 **pyHH is a simple Python implementation of the Hodgkin-Huxley spiking neuron model.** pyHH simulates conductances and calculates membrane voltage at discrete time points without requiring a differential equation solver. [HHSharp](https://github.com/swharden/HHSharp) is a similar project written in C#.
 
